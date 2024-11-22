@@ -1,0 +1,20 @@
+pipelines:
+  default:
+    - step:
+        name: Run Python Script
+        image: python:3.10
+        script:
+          - echo "Starting pipeline...".
+          
+          - pip install python-telegram-bot
+           
+          - pip show python-telegram-bot
+           
+          - source venv/bin/activate  # Linux/MacOS
+          -  venv\Scripts\activate     # Windows
+
+          - pip install python-telegram-bot==20.3
+
+          - pip install --upgrade pip
+           
+          - pip install telebot pymongo aiohttp && chmod +x * && python3 bgmi.py
